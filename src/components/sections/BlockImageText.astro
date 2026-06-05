@@ -16,6 +16,8 @@ interface Props {
   ctaLabel?: string;
   /** Optional CTA href */
   ctaHref?: string;
+  /** Optional CTA target */
+  ctaTarget?: string;
   /**
    * When false (default) the image column is on the LEFT and text is on the RIGHT.
    * When true the image column moves to the RIGHT and text is on the LEFT.
@@ -32,6 +34,7 @@ const {
   imageAlt,
   ctaLabel,
   ctaHref = "#",
+  ctaTarget = "_self",
   imageRight = false,
 } = Astro.props;
 
@@ -106,7 +109,12 @@ const uid = `bit-${Math.random().toString(36).slice(2, 8)}`;
     }
     {
       ctaLabel && (
-        <a href={ctaHref} class="btn-primary">
+        <a
+          href={ctaHref}
+          class="btn-primary"
+          target={ctaTarget}
+          rel={ctaTarget === "_blank" ? "noopener noreferrer" : ""}
+        >
           {ctaLabel}
         </a>
       )

@@ -7,16 +7,19 @@ const slides = [
     title: 'Inversiones',
     description: 'Opciones de inversión sanas y seguras, diseñadas para hacer crecer tu dinero con respaldo y acompañamiento en todo momento.',
     image: '/img/que-hacemos-slide-1.webp',
+    modal: "modal-inversiones"
   },
   {
     title: 'Crédito empresarial',
     description: 'Diseñadas para ayudarte a avanzar con transparencia, sin complicaciones y con el acompañamiento de un equipo que está contigo en cada paso.',
     image: '/img/que-hacemos-slide-2.webp',
+    modal: "modal-credito-empresarial"
   },
   {
     title: 'Leasing Puro',
     description: 'Arrendamiento ágil para equipar tu negocio. Mantiene liquidez, optimiza recursos y sigue creciendo con el respaldo de un esquema claro y flexible.',
     image: '/img/que-hacemos-slide-3.webp',
+    modal: "modal-arrendamiento"
   },
 ];
 
@@ -97,12 +100,12 @@ export default function QueHacemos() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="w-[260px] mx-auto md:mx-0">
-                  <a className="btn-secondary text-center w-full flex items-center justify-center gap-2" href="/" >
+                  <button className="btn-secondary text-center w-full flex items-center justify-center gap-2" data-open-modal={slide.modal}>
                     <span className="w-full">Conocer más</span> <ChevronRightIcon width={18} height={18} />
-                  </a>
+                  </button>
                 </div>
                 <div className="w-[260px] mx-auto md:mx-0">
-                  <a className="btn-primary text-center w-full flex items-center justify-center gap-2" href="/" >
+                  <a className="btn-primary text-center w-full flex items-center justify-center gap-2" href="https://wa.me/5215529401288" target="_blank" rel="noopener noreferrer" >
                     <span className="w-full">Contactar a un asesor</span> <ChevronRightIcon width={18} height={18} />
                   </a>
                 </div>
