@@ -1,17 +1,26 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import MexicanosUnidos from "../components/MexicanosUnidos.astro";
+import QuienesSomos from "../components/QuienesSomos.astro";
+import ThirtyOneYears from "../components/ThirtyOneYears.astro";
+import ClientLogos from "../components/ClientLogos";
+import PorQueConfiar from "../components/PorQueConfiar.astro";
+import QueHacemos from "../components/QueHacemos";
+import Reviews from "../components/Reviews";
+import AddCampaign from "../components/AddCampaign.astro";
+import SeSocio from "../components/SeSocio.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <Hero imageSrc="/img/hero.webp" />
+  <MexicanosUnidos />
+  <QuienesSomos />
+  <ThirtyOneYears />
+  <ClientLogos client:load />
+  <PorQueConfiar />
+  <QueHacemos client:visible />
+  <Reviews client:visible />
+  <AddCampaign />
+  <SeSocio />
+</Layout>

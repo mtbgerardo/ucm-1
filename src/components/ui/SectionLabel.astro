@@ -1,0 +1,33 @@
+---
+interface Props {
+  text: string;
+  variant?: 'red' | 'gold' | 'muted' | 'white';
+  align?: 'left' | 'center' | 'right';
+}
+const { text, variant = 'red', align = 'left' } = Astro.props;
+
+const colorMap = {
+  red: '#980025',
+  gold: '#CEA24A',
+  muted: '#aaaaaa',
+  white: 'rgba(255,255,255,0.65)',
+};
+---
+
+<p
+  class="section-label"
+  style={`color:${colorMap[variant]}; text-align:${align};`}
+>
+  {text}
+</p>
+
+<style>
+  .section-label {
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+    display: block;
+  }
+</style>

@@ -1,0 +1,78 @@
+---
+interface Props {
+  videoSrc?: string;
+  imageSrc?: string;
+}
+const { videoSrc, imageSrc = "/img/hero.webp" } = Astro.props;
+---
+
+<section
+  class="relative w-full overflow-hidden"
+  style="height: 100vh; min-height: 620px;"
+>
+  {
+    videoSrc ? (
+      <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+      >
+        <source src={videoSrc} type="video/mp4" />
+      </video>
+    ) : (
+      <img
+        src={imageSrc}
+        alt="UCM Hero"
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+    )
+  }
+
+  <div
+    class="absolute inset-0"
+    style="background: linear-gradient(105deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.28) 55%, rgba(0,0,0,0.15) 100%);"
+  >
+  </div>
+
+  <div class="relative z-10 h-full flex flex-row items-center">
+    <div class="max-w-[1200px] mb-8 animate-fade-in-up">
+      <div
+        class="w-full p-15 lg:mx-14 rounded-[4rem] border border-white/10 backdrop-blur-[2px] bg-radial-[at_50%_50%] from-black/5 to-black/17 to-95%"
+      >
+        <h1
+          class="leading-[0.85] tracking-tighter mb-6 text-[#ffffff] font-medium text-[clamp(2.5rem,6vw,4.5rem)]"
+        >
+          Invertir es <span
+            class="serif-italic text-white font-medium text-[clamp(3rem,7vw,5.25rem)]"
+            >crecer</span
+          >
+          <br />
+          Crecer, es hacerlo <span
+            class="serif-italic font-medium text-[clamp(3rem,7vw,5.25rem)]"
+            >juntos</span
+          >
+        </h1>
+        <p
+          class="mb-8 leading-relaxed text-white text-[clamp(1rem,2vw,1rem)] max-w-[600px]"
+        >
+          Diseñamos estrategias sólidas y trasparentes de crecimiento financiero
+          junto a una comunidad que construye su futuro contigo.
+        </p>
+        <div
+          class="flex flex-wrap gap-4 animate-fade-in-up animate-duration-900 animate-ease-out animate-delay-300"
+        >
+          <!-- <a href="#nosotros" class="btn-primary">Conócenos</a> -->
+          <a href="#que-hacemos" class="btn-secondary"
+            ><span class="pr-1">Contactar a un asesor</span> &gt;
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="absolute bottom-0 mx-32 my-20">
+      <p class="text-white text-sm font-medium">OSWALDO SÁNCHEZ</p>
+      <p class="text-white text-sm font-medium">EX JUGADOR DE FÚTBOL</p>
+    </div>
+  </div>
+</section>

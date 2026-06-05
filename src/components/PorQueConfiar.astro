@@ -1,0 +1,78 @@
+---
+import BlockImageText from "@/components/sections/BlockImageText.astro";
+---
+
+<section id="beneficios" class="w-full py-24" style="background:#ffffff;">
+  <div class="container-ucm">
+    <BlockImageText
+      title="¿Por qué confiar en nosotros?"
+      subtitle={`Su patrimonio respaldado por una Institución Financiera <span class="serif-italic text-[clamp(2rem,3.8vw,2.8rem)]">Regulada</span>`}
+      paragraphs={[
+        "La clave de nuestro éxito es transparente. Su inversión, finanzas crediticias y rendimientos de ahorro están rigurosamente seleccionados. No hay caja negra.",
+        "Operamos con perfiles de riesgo adecuadamente seleccionados. Además, brindamos cada operación respaldada siempre con garantías reales (líquidas e hipotecarias) para proteger su inversión mexicana.",
+      ]}
+      bulletPoints={[
+        "Inversión en instrumentos federales regulados",
+        "Auditorías externas e internas periódicas",
+        "Garantías reales en cada operación",
+        "Transparencia total en rendimientos",
+      ]}
+      imageSrc="/img/por-que-confiar.webp"
+      imageAlt="Institución Financiera Regulada"
+      ctaLabel="Ver Registro en CONDUSEF"
+      ctaHref="#contacto"
+      imageRight={true}
+    />
+
+    <div class="mt-20 pt-12" style="border-top:1px solid #f0ede8;">
+      <div class="flex flex-wrap items-center justify-center gap-12">
+        {
+          [
+            { name: "CONDUSEF", image: "/img/logo-condusef.png" },
+            { name: "SHCP", image: "/img/logo-shcp.png" },
+            { name: "CNBV", image: "/img/logo-cnbv.png" },
+            { name: "Banco de México", image: "/img/logo-bm.png" },
+            { name: "CONUNION", image: "/img/logo-conunion.png" },
+          ].map((reg) => (
+            <div
+              class="flex flex-col items-center gap-1 reg-logo"
+              style="opacity:0;"
+            >
+              <div class="px-5 py-3 rounded-lg">
+                <img src={reg.image} alt={reg.name} class="w-36 h-auto" />
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const regLogos = document.querySelectorAll(
+    ".reg-logo",
+  ) as NodeListOf<HTMLElement>;
+
+  if (regLogos.length) {
+    const regObs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          regLogos.forEach((el, i) => {
+            setTimeout(() => {
+              el.style.transition = `opacity 0.5s ease ${i * 0.15}s, transform 0.5s ease ${i * 0.15}s`;
+              el.style.opacity = "1";
+              el.style.transform = "translateY(0)";
+            }, i * 150);
+          });
+          regObs.disconnect();
+        }
+      },
+      { threshold: 0.2 },
+    );
+    regLogos.forEach((el) => {
+      el.style.transform = "translateY(16px)";
+      regObs.observe(el);
+    });
+  }
+</script>

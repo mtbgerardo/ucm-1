@@ -1,0 +1,52 @@
+---
+import ChevronRightIcon from "@heroicons/react/24/outline/ChevronRightIcon";
+---
+
+<section
+  id="quiero-ser-socio"
+  class="relative overflow-hidden bg-white py-24 px-0 rounded-tl-[4rem] rounded-tr-[4rem] -mt-20 w-full z-10"
+>
+  <div
+    class="container mx-auto max-w-[800px] text-center md:text-left py-12 sm:px-8"
+  >
+    <p class="tracking-tight font-[500] text-sm uppercase mb-3">
+      ¿Quieres ver crecer tu dinero?
+    </p>
+    <h2
+      class="font-medium text-[clamp(1.8rem,3.5vw,2.90rem)] text-[#0A0B1E] tracking-tighter leading-none mb-8"
+    >
+      Se Socio
+      <span class="serif-italic text-[clamp(2.1rem,4vw,3.5rem)]">UCM </span>{
+        " "
+      }
+      y protege<br />
+      lo que más amas
+    </h2>
+    <div class="w-[240px] mx-auto md:mx-0">
+      <a
+        class="btn-primary text-center w-full flex items-center justify-center gap-2"
+        href="/"
+      >
+        <span class="w-full">Quiero ser socio</span>
+        <ChevronRightIcon width={18} height={18} />
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  const el = document.querySelector(".ss-content") as HTMLElement | null;
+  if (el) {
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          el.style.opacity = "1";
+          el.style.transform = "translateY(0)";
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.2 },
+    );
+    obs.observe(el);
+  }
+</script>

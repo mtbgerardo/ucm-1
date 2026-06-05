@@ -1,0 +1,52 @@
+---
+interface Props {
+  plain: string;
+  serif?: string;
+  serifPosition?: 'before' | 'after' | 'inline';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  align?: 'left' | 'center';
+  color?: 'dark' | 'white';
+  tag?: 'h1' | 'h2' | 'h3';
+}
+
+const {
+  plain,
+  serif,
+  serifPosition = 'after',
+  size = 'md',
+  align = 'left',
+  color = 'dark',
+  tag: Tag = 'h2',
+} = Astro.props;
+
+const sizeMap = {
+  sm: 'clamp(1.5rem, 2.8vw, 2rem)',
+  md: 'clamp(1.75rem, 3.5vw, 2.5rem)',
+  lg: 'clamp(2rem, 4.5vw, 3.25rem)',
+  xl: 'clamp(2.5rem, 6vw, 4.5rem)',
+};
+
+const serifSizeMap = {
+  sm: 'clamp(1.75rem, 3.2vw, 2.35rem)',
+  md: 'clamp(2rem, 4vw, 2.9rem)',
+  lg: 'clamp(2.35rem, 5.2vw, 3.75rem)',
+  xl: 'clamp(2.9rem, 7vw, 5.25rem)',
+};
+
+const colorMap = {
+  dark: '#333333',
+  white: '#ffffff',
+};
+---
+
+<Tag
+  style={`font-size:${sizeMap[size]}; color:${colorMap[color]}; line-height:1.15; text-align:${align};`}
+>
+  {serifPosition === 'before' && serif && (
+    <span class="serif-italic" style={`font-size:${serifSizeMap[size]}; color:${colorMap[color]};`}>{serif} </span>
+  )}
+  {plain}
+  {serifPosition === 'after' && serif && (
+    <span class="serif-italic" style={`font-size:${serifSizeMap[size]}; color:${colorMap[color]};`}> {serif}</span>
+  )}
+</Tag>

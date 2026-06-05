@@ -1,0 +1,20 @@
+---
+import BlockImageText from "@/components/sections/BlockImageText.astro";
+---
+
+<section id="nosotros" class="w-full py-24" style="background:#ffffff;">
+  <div class="container-ucm">
+    <BlockImageText
+      title="¿Quiénes Somos?"
+      subtitle={`El respaldo de expertos<br />que necesita tu <span class="serif-italic text-[clamp(2.1rem,4vw,3.5rem)]">patrimonio</span>`}
+      paragraphs={[
+        "Somos una unión de crédito con más de 30 años. Cuidamos su patrimonio y hacemos crecer su capital mediante servicios de inversión, crédito y ahorro, diseñados exclusivamente para ofrecerle las mejores condiciones y así, fortalecier la economía mexicana.",
+        "Aquí siempre tendrá atención directa con especialistas capacitados para brindarle la solución exacta discreta y ágil que busca.",
+      ]}
+      imageSrc="/img/quienes-somos.webp"
+      imageAlt="¿Quiénes Somos?"
+      ctaLabel="Conoce más sobre nosotros"
+      ctaHref="#contacto"
+    />
+  </div>
+</section>

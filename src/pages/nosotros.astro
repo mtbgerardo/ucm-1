@@ -1,0 +1,326 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/sections/PageHero.astro";
+import BlockImageText from "@/components/sections/BlockImageText.astro";
+import CTABanner from "../components/sections/CTABanner.astro";
+import ChevronRightIcon from "@heroicons/react/20/solid/ChevronRightIcon";
+---
+
+<Layout
+  title="Nosotros — UCM Unión de Crédito Mexicano"
+  description="Más de 31 años respaldando el patrimonio de familias mexicanas. Conoce nuestra historia, misión, valores y equipo directivo."
+>
+  <PageHero
+    title="Detrás de cada inversión hay una historia que"
+    titleSerif="cuidamos"
+    image="/img/hero-nosotros.webp"
+  />
+
+  <!-- Historia -->
+  <section class="section-white py-24">
+    <div class="container-ucm">
+      <BlockImageText
+        title="Nuestra Historia"
+        subtitle={`Más de tres décadas<br />construyendo <span class="serif-italic text-[clamp(2.1rem,4vw,3.5rem)]">confianza</span>`}
+        paragraphs={[
+          "UCM nació en 1993 con una visión clara: crear una institución financiera al servicio de los mexicanos, donde el socio fuera el centro de cada decisión. Hemos atravesado crisis económicas, devaluaciones y transformaciones del sistema financiero mexicano, siempre saliendo fortalecidos.",
+          "Hoy somos una de las uniones de crédito más sólidas del país, supervisada por la CNBV y respaldada por un equipo de especialistas financieros comprometidos con el bienestar patrimonial de cada socio.",
+        ]}
+        imageSrc="/img/nosotros-quienes-somos.webp"
+        imageAlt="Historia de UCM"
+        imageRight={true}
+      />
+    </div>
+  </section>
+
+  <!-- Pilares -->
+  <section class="section-white md:py-50">
+    <div class="container-ucm">
+      <div class="mb-16 reveal-up">
+        <div
+          class="container mx-auto md:mx-0 max-w-[800px] text-center md:text-left py-12 sm:px-8 animate-fade-in-up"
+        >
+          <p class="tracking-tight font-[500] text-sm uppercase mb-3">
+            Nuestra Filosofia
+          </p>
+          <h2
+            class="font-medium text-[clamp(1.8rem,3.5vw,2.90rem)] text-[#0A0B1E] tracking-tighter leading-none mb-8"
+          >
+            Creemos en la
+            <span class="serif-italic text-[clamp(2.1rem,4vw,3.5rem)]"
+              >tranquilidad</span
+            >{" "}
+            financiera
+          </h2>
+          <div
+            class="max-w-[800px] mx-auto md:mx-0 text-[clamp(0.9rem,2vw,1.1rem)]"
+          >
+            Creemos en el valor de su esfuerzo y en la importancia de proteger
+            lo que ha construido con los años. Por ello, nos comprometemos a ser
+            el aliado estratégico que le brinde la certeza y el impulso
+            necesario para llevar su capital al siguiente nivel.
+          </div>
+        </div>
+      </div>
+
+      <div id="filosofia" class="flex flex-row items-center gap-8">
+        <div id="filosofia-img-1">
+          <img
+            alt="Creemos en la tranquilidad financiera"
+            width="100%"
+            height="auto"
+            src="/img/nosotros-nuestra-filosofia-2.webp"
+            style="transition:transform 0.6s ease;"
+            onmouseover="this.style.transform='scale(1.04)'"
+            onmouseout="this.style.transform='scale(1)'"
+          />
+        </div>
+        <div class="flex flex-col items-center gap-8">
+          <div id="filosofia-img-2">
+            <img
+              alt="Creemos en la tranquilidad financiera"
+              width="100%"
+              height="auto"
+              src="/img/nosotros-nuestra-filosofia-1.webp"
+              style="transition:transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.04)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
+          </div>
+          <div id="filosofia-img-3">
+            <img
+              alt="Creemos en la tranquilidad financiera"
+              width="100%"
+              height="auto"
+              src="/img/nosotros-nuestra-filosofia-3.webp"
+              style="transition:transform 0.6s ease;"
+              onmouseover="this.style.transform='scale(1.04)'"
+              onmouseout="this.style.transform='scale(1)'"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-20 max-w-[740px] mx-auto px-5">
+        <p>
+          Creemos en la fuerza de las personas que se unen para salir adelante.
+          Porque cuando alguien confía, no solo invierte dinero: invierte en lo
+          que podemos construir juntos. Nuestro compromiso es cuidar esa
+          confianza todos los días, acompañando a cada socio con
+          responsabilidad, cercanía y visión de largo plazo.
+        </p>
+      </div>
+
+      <div
+        class="flex flex-col lg:flex-row items-center justify-between gap-8 mt-20"
+      >
+        <div
+          class={`flex flex-col items-start justify-between p-10 rounded-[4rem] bg-[#0A0B1E] w-[430px] h-[308px] reveal-up relative overflow-hidden`}
+          style={`animation-delay:${1 * 0.12}s;`}
+        >
+          <p
+            class="font-[500] text-xs uppercase text-white mb-2 p-2 border-2 border-white rounded-xl"
+          >
+            Solidez Financiera
+          </p>
+          <p
+            class="text-[clamp(1.2rem,2vw,1.4rem)] text-white text-left text-tracking-tight font-[600]"
+          >
+            Más de 30 años construyendo confianza y respaldo para nuestros
+            socios.
+          </p>
+        </div>
+        <div
+          class={`flex flex-col items-start justify-between p-10 rounded-[4rem] bg-[#980025] w-[430px] h-[308px] reveal-up`}
+          style={`animation-delay:${2 * 0.12}s;`}
+        >
+          <p
+            class="font-[500] text-xs uppercase text-white mb-2 p-2 border-2 border-white rounded-xl"
+          >
+            Atención Personalizada
+          </p>
+          <p
+            class="text-[clamp(1.2rem,2vw,1.4rem)] text-white text-left text-tracking-tight font-[600]"
+          >
+            Cada socio y cada proyecto reciben un acompañamiento cercano y
+            humano.
+          </p>
+        </div>
+        <div
+          class={`flex flex-col items-start justify-between p-10 rounded-[4rem] bg-[#D9D9D9] w-[430px] h-[308px] reveal-up`}
+          style={`animation-delay:${3 * 0.12}s;`}
+        >
+          <p
+            class="font-[500] text-xs uppercase text-black mb-2 p-2 border-2 border-black rounded-xl"
+          >
+            Transparencia
+          </p>
+          <p
+            class="text-[clamp(1.2rem,2vw,1.4rem)] text-black text-left text-tracking-tight font-[600]"
+          >
+            Información clara, procesos transparentes y relaciones construidas
+            con honestidad.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="video" class="py-20">
+      <div class="container-ucm">
+        <div class="bg-[#0A0B1E] w-full h-screen max-h-[680px]"></div>
+      </div>
+      <div class="container mx-auto max-w-[800px] text-center py-12 sm:px-8">
+        <h2
+          class="font-medium text-[clamp(1.8rem,3.5vw,2.90rem)] text-[#0A0B1E] tracking-tighter leading-none mb-8"
+        >
+          Unidos contigo,
+          <span class="serif-italic text-[clamp(2.1rem,4vw,3.5rem)]"
+            >unidos con
+          </span>{" "}
+          México
+        </h2>
+        <div
+          class="max-w-[800px] mx-auto md:mx-0 text-[clamp(0.9rem,2vw,1.1rem)]"
+        >
+          <p>
+            Seguimos evolucionando para ofrecer soluciones financieras más
+            accesibles, cercanas y alineadas con las necesidades de quienes
+            confían en nosotros.
+          </p>
+          <p>
+            Nuestro equipo está listo para acompañarte y ayudarte a encontrar la
+            mejor opción para ti o tu empresa.
+          </p>
+          <div class="w-[240px] mx-auto my-8">
+            <a
+              class="btn-primary text-center w-full flex items-center justify-center gap-2"
+              href="/"
+            >
+              <span class="w-full">Quiero ser socio</span>
+              <ChevronRightIcon width={18} height={18} />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner />
+</Layout>
+
+<script>
+  const revealEls = document.querySelectorAll<HTMLElement>(
+    ".reveal-up, .reveal-left, .reveal-right",
+  );
+
+  revealEls.forEach((el) => {
+    const isLeft = el.classList.contains("reveal-left");
+    const isRight = el.classList.contains("reveal-right");
+    el.style.opacity = "0";
+    el.style.transform = isLeft
+      ? "translateX(-30px)"
+      : isRight
+        ? "translateX(30px)"
+        : "translateY(24px)";
+    el.style.transition = "opacity 0.7s ease, transform 0.7s ease";
+
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const delay = el.style.animationDelay || "0s";
+          setTimeout(
+            () => {
+              el.style.opacity = "1";
+              el.style.transform = "translate(0)";
+            },
+            parseFloat(delay) * 1000,
+          );
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.12 },
+    );
+    obs.observe(el);
+  });
+</script>
+
+<script>
+  import { animate } from "motion";
+
+  const filosofia = document.getElementById("filosofia");
+  const img1 = document.getElementById("filosofia-img-1");
+  const img2 = document.getElementById("filosofia-img-2");
+  const img3 = document.getElementById("filosofia-img-3");
+
+  if (filosofia && img1 && img2 && img3) {
+    // img-1 lives on the left, the img-2/img-3 column on the right. Each one's
+    // "edge" state is pushed out to its screen side, scaled down to 20%.
+    const targets: [HTMLElement, string][] = [
+      [img1, "-65vw"], // left edge
+      [img2, "65vw"], // right edge
+      [img3, "65vw"], // right edge
+    ];
+    const EDGE = (x: string) => `translateX(${x}) scale(0.2)`;
+    const CENTER = "translateX(0vw) scale(1)";
+    const opts = { duration: 1.1, ease: [0.22, 1, 0.36, 1] as const };
+
+    // Start in the edge state (no flash before the first reveal).
+    for (const [el, x] of targets) {
+      el.style.transformOrigin = "center center";
+      el.style.transform = EDGE(x);
+      el.style.opacity = "0";
+      el.style.willChange = "transform, opacity";
+    }
+
+    // Entering by scrolling DOWN → images approach: scale 20% → 100%, edges →
+    // centre, fading in. Entering by scrolling UP → images recede: scale 100% →
+    // 20%, centre → edges, fading out.
+    const playIn = () =>
+      targets.forEach(([el, x], i) =>
+        animate(
+          el,
+          { transform: [EDGE(x), CENTER], opacity: [0, 1] },
+          { ...opts, delay: i * 0.12 },
+        ),
+      );
+    const playOut = () =>
+      targets.forEach(([el, x], i) =>
+        animate(
+          el,
+          { transform: [CENTER, EDGE(x)], opacity: [1, 0] },
+          { ...opts, delay: i * 0.12 },
+        ),
+      );
+
+    // Track scroll direction.
+    let lastY = window.scrollY;
+    let dir: "up" | "down" = "down";
+    window.addEventListener(
+      "scroll",
+      () => {
+        const y = window.scrollY;
+        if (y !== lastY) {
+          dir = y > lastY ? "down" : "up";
+          lastY = y;
+        }
+      },
+      { passive: true },
+    );
+
+    // Fire the matching animation on entry; don't replay the same direction
+    // twice in a row.
+    let last: "in" | "out" | null = null;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        const want = dir === "down" ? "in" : "out";
+        if (want === last) return;
+        last = want;
+        if (want === "in") playIn();
+        else playOut();
+      },
+      { threshold: 0.3 },
+    );
+    obs.observe(filosofia);
+  }
+</script>

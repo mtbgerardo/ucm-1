@@ -1,0 +1,396 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/sections/PageHero.astro";
+import BlockImageText from "@/components/sections/BlockImageText.astro";
+import CTABanner from "../components/sections/CTABanner.astro";
+import SectionLabel from "../components/ui/SectionLabel.astro";
+---
+
+<Layout
+  title="Soluciones — UCM Unión de Crédito Mexicano"
+  description="Multiplica tu patrimonio con inversiones sanas, seguras y reguladas. Instrumentos federales, deuda privada y más opciones con respaldo real."
+>
+  <PageHero
+    title="Soluciones financieras pensadas para crecer"
+    titleSerif="contigo"
+    image="/img/hero-soluciones.webp"
+  />
+
+  <!-- Introducción -->
+  <section class="section-white py-24" id="tipos">
+    <div class="container-ucm">
+      <BlockImageText
+        title="Con UCM tienes,"
+        subtitle="3 productos, un sin fin de posibilidades"
+        paragraphs={[
+          "Inversión, financiamiento y arrendamiento con el respaldo, la cercanía y la confianza que nos ha definido por más de 30 años.",
+          "En UCM, no operamos desde la lógica de atención masiva. Nuestro modelo nos permite ofrecer soluciones financieras más personalizadas, con procesos claros y una visión enfocada en el crecimiento sostenible de nuestros socios y sus proyectos.",
+        ]}
+        imageSrc="/img/soluciones-posibilidades.webp"
+        imageAlt="3 productos, un sin fin de posibilidades"
+      />
+    </div>
+  </section>
+
+  <!-- Tipos de inversión -->
+  <section class="py-10">
+    <div class="container-ucm">
+      <div class="text-center mb-16 reveal-up">
+        <h2
+          style="font-size:clamp(1.75rem,3.5vw,2.5rem); color:#333333; text-align:center; line-height:1.2;"
+        >
+          Una institución financiera<br />
+          con
+          <span
+            class="serif-italic"
+            style="font-size:clamp(2rem,4vw,2.9rem); color:#333333;"
+          >
+            propósito</span
+          >
+        </h2>
+      </div>
+
+      <div
+        class="flex snap-x snap-mandatory overflow-x-auto gap-5 py-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden md:grid md:grid-cols-3 md:gap-8 md:overflow-x-visible md:py-0"
+      >
+        {
+          [
+            {
+              icon: "/img/icon-solucion-inversion.png",
+              title: "Inversión",
+              tag: "Más popular",
+              desc: "Opciones de inversión claras y seguras, diseñadas para hacer crecer tu patrimonio con respaldo y acompañamiento.",
+              features: [
+                "Rendimiento hasta 13% anual",
+                "Acceso a crédito preferencial",
+                "Beneficios exclusivos de socio",
+                "Sin comisiones de manejo",
+              ],
+              from: "Desde $50,000 MXN",
+            },
+            {
+              icon: "/img/icon-solucion-credito.png",
+              title: "Crédito Empresarial",
+              tag: "Bajo riesgo",
+              desc: "Soluciones de financiamiento diseñadas para ayudar a empresas y proyectos a seguir creciendo con estabilidad y claridad.",
+              features: [
+                "Respaldo del gobierno federal",
+                "Alta liquidez",
+                "Tasas referenciadas a TIIE",
+                "Mínimo riesgo de mercado",
+              ],
+              from: "Desde $100,000 MXN",
+            },
+            {
+              icon: "/img/icon-solucion-arrendamiento.png",
+              title: "Arrendamiento Puro",
+              tag: "Mayor rendimiento",
+              desc: "Accede a los activos que tu empresa necesita mientras mantienes liquidez y flexibilidad financiera.",
+              features: [
+                "Rendimiento hasta 15% anual",
+                "Garantía hipotecaria",
+                "Diversificación real",
+                "Auditoría independiente",
+              ],
+              from: "Desde $200,000 MXN",
+            },
+          ].map((item, i) => (
+            <div
+              id={`card-${i}`}
+              class={`card reveal-up snap-center shrink-0 basis-[82%] sm:basis-[60%] md:basis-auto ${i === 0 ? "relative overflow-hidden" : ""} cursor-pointer`}
+              style={`animation-delay:${i * 0.12}s;`}
+            >
+              <div style="font-size:2rem; margin-bottom:1.25rem;">
+                <img
+                  class="inline-block"
+                  src={item.icon}
+                  alt={item.title}
+                  width="50"
+                  height="50"
+                />
+              </div>
+              <h3 style="font-size:1.15rem; font-weight:500; color:#333333; margin:1rem 0 0.75rem;">
+                {item.title}
+              </h3>
+              <p style="font-size:0.875rem; line-height:1.7; color:#0A0B1E; margin-bottom:1.5rem;">
+                {item.desc}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso -->
+  <section class="section-white md:pb-70">
+    <div class="container-ucm">
+      <!-- tab Inversiones -->
+      <div id="panel-0" class="solucion-panel grid md:grid-cols-2 gap-8">
+        <div class="relative reveal-right">
+          <div class="overflow-hidden w-full h-full">
+            <img
+              src="/img/soluciones-opciones-1.webp"
+              alt="Inversiones UCM"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+        <div class="reveal-up">
+          <div class="flex flex-col gap-6">
+            {
+              [
+                {
+                  n: "inversion-1",
+                  title: "Rendimientos competitivos",
+                  text: "Haz crecer tu patrimonio con opciones diseñadas para generar valor a mediano y largo plazo.",
+                },
+                {
+                  n: "inversion-2",
+                  title: "Transparencia en cada paso",
+                  text: "Accede a información clara sobre tu inversión, movimientos y seguimiento de rendimiento.",
+                },
+                {
+                  n: "inversion-3",
+                  title: "Atención personalizada",
+                  text: "Recibe orientación basada en tus objetivos financieros y el perfil de inversión que buscas construir.",
+                },
+                {
+                  n: "inversion-4",
+                  title: "Diversificación patrimonial",
+                  text: "Complementa tu estrategia financiera con alternativas enfocadas en estabilidad y crecimiento sostenido.",
+                },
+              ].map((step) => (
+                <div id={step.n} class="step-item">
+                  <div class="border-b-2 border-b-[#E7E7E7] pb-4">
+                    <h3 style="font-size:0.9375rem; font-weight:500; color:#333333; margin-bottom:0.3rem;">
+                      {step.title}
+                    </h3>
+                    <p style="font-size:0.875rem; line-height:1.7; color:#0A0B1E;">
+                      {step.text}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+            <div>
+              <button class="btn-primary uppercase">Invertir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Crédito -->
+      <div id="panel-1" class="solucion-panel grid md:grid-cols-2 gap-8">
+        <div class="relative reveal-right">
+          <div class="overflow-hidden w-full h-full">
+            <img
+              src="/img/soluciones-opciones-2.webp"
+              alt="Inversiones UCM"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+        <div class="reveal-up">
+          <div class="flex flex-col gap-6">
+            {
+              [
+                {
+                  n: "01",
+                  title: "Procesos ágiles",
+                  text: "Evaluaciones más eficientes para ayudarte a avanzar con rapidez en oportunidades clave para tu empresa.",
+                },
+                {
+                  n: "02",
+                  title: "Condiciones claras",
+                  text: "Esquemas financieros transparentes, sin procesos innecesariamente complejos ni información confusa.",
+                },
+                {
+                  n: "03",
+                  title: "Acompañamiento estratégico",
+                  text: "Soluciones alineadas a las necesidades reales de operación, crecimiento o expansión de tu negocio.",
+                },
+                {
+                  n: "04",
+                  title: "Financiamiento para crecimiento real",
+                  text: "Impulsa capital de trabajo, expansión, equipamiento o nuevos proyectos con una estructura pensada para empresas en movimiento.",
+                },
+              ].map((step) => (
+                <div class="step-item">
+                  <div class="border-b-2 border-b-[#E7E7E7] pb-4">
+                    <h3 style="font-size:0.9375rem; font-weight:500; color:#333333; margin-bottom:0.3rem;">
+                      {step.title}
+                    </h3>
+                    <p style="font-size:0.875rem; line-height:1.7; color:#0A0B1E;">
+                      {step.text}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+            <div>
+              <button class="btn-primary uppercase">Solicitar Crédito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab Arrendamiento -->
+      <div id="panel-2" class="solucion-panel grid md:grid-cols-2 gap-8">
+        <div class="relative reveal-right">
+          <div class="overflow-hidden w-full h-full">
+            <img
+              src="/img/soluciones-opciones-3.webp"
+              alt="Inversiones UCM"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+        <div class="reveal-up">
+          <div class="flex flex-col gap-6">
+            {
+              [
+                {
+                  n: "01",
+                  title: "Conserva flujo de efectivo",
+                  text: "Adquiere los activos que tu empresa necesita sin realizar una fuerte inversión inicial.",
+                },
+                {
+                  n: "02",
+                  title: "Esquemas flexibles",
+                  text: "Soluciones adaptadas a la operación, capacidad y objetivos financieros de tu empresa.",
+                },
+                {
+                  n: "03",
+                  title: "Beneficios fiscales",
+                  text: "Optimiza recursos mediante esquemas de arrendamiento con ventajas fiscales para tu negocio.",
+                },
+                {
+                  n: "04",
+                  title: "Acceso a activos estratégicos",
+                  text: "Facilita la adquisición de equipo, tecnología o flotillas para mantener el crecimiento y operación de tu empresa.",
+                },
+              ].map((step) => (
+                <div class="step-item">
+                  <div class="border-b-2 border-b-[#E7E7E7] pb-4">
+                    <h3 style="font-size:0.9375rem; font-weight:500; color:#333333; margin-bottom:0.3rem;">
+                      {step.title}
+                    </h3>
+                    <p style="font-size:0.875rem; line-height:1.7; color:#0A0B1E;">
+                      {step.text}
+                    </p>
+                  </div>
+                </div>
+              ))
+            }
+            <div>
+              <button class="btn-primary uppercase">Pedir Préstamo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    id="contacto"
+    label="Da el primer paso"
+    title="Comienza a invertir"
+    titleSerif="hoy"
+    description="Nuestros especialistas están listos para diseñar la estrategia de inversión perfecta para ti. Sin compromiso, sin costos ocultos."
+    cta={{ label: "Agendar cita gratuita", href: "#" }}
+    ctaSecondary={{ label: "Ver planes de membresía", href: "/tienda" }}
+    variant="surface"
+    align="center"
+  />
+</Layout>
+
+<script>
+  const revealEls = document.querySelectorAll<HTMLElement>(
+    ".reveal-up, .reveal-left, .reveal-right",
+  );
+  revealEls.forEach((el) => {
+    const isLeft = el.classList.contains("reveal-left");
+    const isRight = el.classList.contains("reveal-right");
+    el.style.opacity = "0";
+    el.style.transform = isLeft
+      ? "translateX(-30px)"
+      : isRight
+        ? "translateX(30px)"
+        : "translateY(24px)";
+    el.style.transition = "opacity 0.7s ease, transform 0.7s ease";
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          const delay = parseFloat(el.style.animationDelay || "0") * 1000;
+          setTimeout(() => {
+            el.style.opacity = "1";
+            el.style.transform = "translate(0)";
+          }, delay);
+          obs.disconnect();
+        }
+      },
+      { threshold: 0.1 },
+    );
+    obs.observe(el);
+  });
+</script>
+
+<script>
+  import { animate } from "motion";
+
+  // Each card (card-0/1/2) maps to a tab panel (panel-0/1/2). Panels start
+  // hidden — only the first is visible — and clicking a card fades in its panel.
+  const cards = Array.from(
+    document.querySelectorAll<HTMLElement>('[id^="card-"]'),
+  );
+  const panels = Array.from(
+    document.querySelectorAll<HTMLElement>(".solucion-panel"),
+  );
+
+  if (cards.length && panels.length) {
+    panels.forEach((p, i) => {
+      if (i !== 0) p.style.display = "none";
+    });
+
+    const setActive = (index: number) =>
+      cards.forEach((c) =>
+        c.classList.toggle(
+          "is-active",
+          Number(c.id.replace("card-", "")) === index,
+        ),
+      );
+
+    let activeIndex = 0;
+    setActive(0); // card-0 starts active (its panel is the visible one)
+
+    const show = (index: number) => {
+      setActive(index);
+      if (index === activeIndex) return;
+      const target = document.getElementById(`panel-${index}`);
+      if (!target) return;
+
+      panels.forEach((p) => (p.style.display = "none"));
+      target.style.display = "";
+      animate(
+        target,
+        { opacity: [0, 1], transform: ["translateY(14px)", "translateY(0px)"] },
+        { duration: 0.5, ease: [0.22, 1, 0.36, 1] },
+      );
+      activeIndex = index;
+    };
+
+    cards.forEach((card) => {
+      const index = Number(card.id.replace("card-", ""));
+      card.addEventListener("click", () => show(index));
+    });
+  }
+</script>
+
+<style>
+  /* Active card state (selected tab). */
+  .card.is-active {
+    outline: 2px solid #cea24a;
+    outline-offset: 3px;
+  }
+</style>

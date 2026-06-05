@@ -1,0 +1,125 @@
+---
+interface Props {
+  label?: string;
+  title: string;
+  titleSerif?: string;
+  description?: string;
+  image: string;
+  videoSrc?: string;
+  breadcrumb?: Array<{ label: string; href: string }>;
+  cta?: { label: string; href: string };
+  ctaSecondary?: { label: string; href: string };
+}
+
+const {
+  label,
+  title,
+  titleSerif,
+  description,
+  image,
+  videoSrc,
+  breadcrumb,
+  cta,
+  ctaSecondary,
+} = Astro.props;
+---
+
+<section class="relative w-full overflow-hidden h-screen">
+  {
+    videoSrc ? (
+      <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+      >
+        <source src={videoSrc} type="video/mp4" />
+      </video>
+    ) : (
+      <img
+        src={image}
+        alt={title}
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+    )
+  }
+
+  <div
+    class="absolute inset-0"
+    style="background: linear-gradient(105deg, rgba(0,0,0,0.10) 0%, rgba(0,0,0,0.28) 55%, rgba(0,0,0,0.15) 100%);"
+  >
+  </div>
+
+  <div class="relative z-10 h-full flex flex-row items-center pt-36 pb-20">
+    <div class="w-auto mb-8 animate-fade-in-up">
+      <div
+        class="p-15 lg:mx-14 rounded-[4rem] border border-white/10 backdrop-blur-[2px] bg-radial-[at_50%_50%] from-black/5 to-black/17 to-95%"
+      >
+        {
+          breadcrumb && breadcrumb.length > 0 && (
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+              <a href="/">Inicio</a>
+              {breadcrumb.map((item, i) => (
+                <>
+                  <span class="breadcrumb__sep">›</span>
+                  {i === breadcrumb.length - 1 ? (
+                    <span style="color:rgba(255,255,255,0.9);">
+                      {item.label}
+                    </span>
+                  ) : (
+                    <a href={item.href}>{item.label}</a>
+                  )}
+                </>
+              ))}
+            </nav>
+          )
+        }
+
+        {
+          label && (
+            <p class="text-[0.6875rem] font-medium tracking-[0.22em] uppercase text-gold mb-4">
+              {label}
+            </p>
+          )
+        }
+        <h1
+          class="leading-[0.85] tracking-tighter mb-6 text-[#ffffff] font-medium text-[clamp(2.5rem,6vw,4.5rem)] max-w-[750px]"
+        >
+          {title}
+          {
+            titleSerif && (
+              <span class="serif-italic text-white font-medium text-[clamp(3rem,7vw,5.25rem)]">
+                {" "}
+                {titleSerif}
+              </span>
+            )
+          }
+        </h1>
+        {
+          description && (
+            <p class="mb-8 leading-relaxed text-white/80 text-[clamp(1rem,2vw,1rem)] max-w-[520px]">
+              {description}
+            </p>
+          )
+        }
+        {
+          (cta || ctaSecondary) && (
+            <div class="flex flex-wrap gap-4 animate-fade-in-up animate-duration-900 animate-ease-out animate-delay-300">
+              {cta && (
+                <a href={cta.href} class="btn-primary">
+                  {cta.label}
+                </a>
+              )}
+              {ctaSecondary && (
+                <a href={ctaSecondary.href} class="btn-secondary">
+                  {ctaSecondary.label}
+                </a>
+              )}
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

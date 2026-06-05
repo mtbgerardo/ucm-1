@@ -1,0 +1,265 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/sections/PageHero.astro";
+import CTABanner from "../components/sections/CTABanner.astro";
+import SectionLabel from "../components/ui/SectionLabel.astro";
+---
+
+<Layout
+  title="Legales — UCM Unión de Crédito Mexicano"
+  description="Descubre todos los beneficios exclusivos de ser socio UCM: rendimientos superiores, acceso a eventos, asesoría personalizada y mucho más."
+>
+  <PageHero
+    title="Cuidar tu confianza también es hablar de forma"
+    titleSerif="clara"
+    image="/img/hero-legales.webp"
+  />
+
+  <!-- Legales main section -->
+  <section class="section-white my-20">
+    <div class="container-ucm text-center">
+      <p class="tracking-tight font-[500] text-sm uppercase mb-3">
+        LA TRANSPARENCIA COMIENZA CON ACCIONES, NO PALABRAS
+      </p>
+      <h2
+        class="font-medium text-[clamp(1.8rem,3.5vw,2.90rem)] text-[#0A0B1E] tracking-tighter leading-none mb-8"
+      >
+        Visita nuestra Información{" "}<br />
+        <span class="serif-italic text-[clamp(2.1rem,4vw,3.5rem)]">
+          Financiera
+        </span>{" "}
+        en cualquier momento
+      </h2>
+    </div>
+  </section>
+  <section class="mb-30">
+    <!-- Two-column: prose left, pill links right -->
+    <div class="leg-grid container-ucm">
+      <!-- Left column: UNE + Buró text blocks -->
+      <div class="leg-col reveal-left">
+        <!-- UNE block -->
+        <div class="leg-col__section">
+          <span class="leg-col__label"
+            >Unidad Especializada de Atención a Usuarios (UNE)</span
+          >
+          <p class="leg-col__desc">
+            En cumplimiento del Art. 50 bis de la Ley de Protección y Defensa al
+            Usuario de los Servicios Financieros, ponemos a tu disposición
+            nuestra Unidad Especializada de Atención a Socios, la cual tiene por
+            objeto atender consultas, aclaraciones y/o reclamos.
+          </p>
+          <a
+            href="https://drive.google.com/file/d/1-ulpQ7fmB9KO8gKSPDr0Hdh0kcFaO-QE/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="leg-col__cta">Descargar UNE</a
+          >
+        </div>
+
+        <!-- Buró block -->
+        <div class="leg-col__section">
+          <span class="leg-col__label">Buró de Entidades Financieras</span>
+          <p class="leg-col__desc">
+            Es una herramienta de consulta y difusión con la que podrás conocer
+            los productos que ofrecen las entidades financieras, así como sus
+            comisiones y tasas. Además, puede contribuir al crecimiento
+            económico del país al promover la competencia entre instituciones
+            financieras, la cual impulsará la transparencia al revelar
+            información a los usuarios sobre su desempeño, así como sobre los
+            productos que ofrecen. También facilita el manejo responsable de los
+            productos y servicios financieros al conocer a detalle sus
+            características.
+          </p>
+          <p class="leg-col__desc">
+            Con el Buró de Entidades Financieras se logrará saber quién es quién
+            en bancos, seguros, sociedades financieras de objeto múltiple, cajas
+            de ahorro, Afores, entre otras entidades. Podrás comparar y evaluar
+            las entidades financieras, sus productos y servicios. Nuestra
+            información contenida en el Buró de Entidades Financieras estará
+            disponible a partir del 15 de febrero de 2015 para su consulta. Para
+            conocer la información de todo el sector de uniones de crédito,
+            podrás acceder al sitio: <a
+              href="http://www.buro.gob.mx"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="color:#CEA24A;text-decoration:underline;"
+              >http://www.buro.gob.mx</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <!-- Right column: pill-shaped document links with image backgrounds -->
+      <div class="leg-col reveal-right">
+        <div class="leg-pills">
+          <a href="#" class="leg-pill" aria-label="Ley de Uniones de Crédito">
+            <img
+              src="/img/que-hacemos-slide-1.webp"
+              alt=""
+              class="leg-pill__bg"
+            />
+            <div class="leg-pill__overlay"></div>
+            <span class="leg-pill__label">Ley de Uniones de Crédito</span>
+          </a>
+
+          <a
+            href="https://dof.gob.mx/nota_detalle.php?codigo=5273403&fecha=17/10/2012#gsc.tab=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="leg-pill"
+            aria-label="Ley Federal para la Prevención e Identificación de Operaciones con Recursos de Procedencia Ilícita"
+          >
+            <img
+              src="/img/que-hacemos-slide-2.webp"
+              alt=""
+              class="leg-pill__bg"
+            />
+            <div class="leg-pill__overlay"></div>
+            <span class="leg-pill__label"
+              >Ley Federal para la Prevención e Identificación de Operaciones
+              con Recursos de Procedencia Ilícita</span
+            >
+          </a>
+
+          <a
+            href="#"
+            class="leg-pill"
+            aria-label="Disposiciones de Carácter General Uniones de Crédito"
+          >
+            <img
+              src="/img/soluciones-opciones-1.webp"
+              alt=""
+              class="leg-pill__bg"
+            />
+            <div class="leg-pill__overlay"></div>
+            <span class="leg-pill__label"
+              >Disposiciones de Carácter General Uniones de Crédito</span
+            >
+          </a>
+
+          <a
+            href="#"
+            class="leg-pill leg-pill--dark"
+            aria-label="Ley para la Transparencia y Ordenamiento de los Servicios Financieros"
+          >
+            <img
+              src="/img/soluciones-opciones-2.webp"
+              alt=""
+              class="leg-pill__bg"
+            />
+            <div class="leg-pill__overlay"></div>
+            <span class="leg-pill__label"
+              >Ley para la Transparencia y Ordenamiento de los Servicios
+              Financieros</span
+            >
+          </a>
+
+          <a
+            href="https://dof.gob.mx/nota_detalle.php?codigo=5275522&fecha=26/10/2012#gsc.tab=0"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="leg-pill"
+            aria-label="Disposiciones de Carácter General Uniones de Crédito"
+          >
+            <img
+              src="/img/soluciones-opciones-3.webp"
+              alt=""
+              class="leg-pill__bg"
+            />
+            <div class="leg-pill__overlay"></div>
+            <span class="leg-pill__label"
+              >Disposiciones de Carácter General Uniones de Crédito</span
+            >
+          </a>
+
+          <a
+            href="https://www.cnbv.gob.mx/SECTORES-SUPERVISADOS/UNIONES-DE-CREDITO/Paginas/Normatividad.aspx"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="leg-pill"
+            aria-label="CUIFE"
+          >
+            <img
+              src="/img/nosotros-nuestra-filosofia-1.webp"
+              alt=""
+              class="leg-pill__bg"
+            />
+            <div class="leg-pill__overlay"></div>
+            <span class="leg-pill__label">CUIFE</span>
+          </a>
+
+          <a
+            href="#"
+            class="leg-pill leg-pill--dark"
+            aria-label="Código de Ética"
+          >
+            <img
+              src="/img/nosotros-nuestra-filosofia-2.webp"
+              alt=""
+              class="leg-pill__bg"
+            />
+            <div class="leg-pill__overlay"></div>
+            <span class="leg-pill__label">Código de Ética</span>
+          </a>
+
+          <a
+            href="https://drive.google.com/file/d/1dg66SaMocNXf9C6isKGay_tCQM3KeTrA/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="leg-pill"
+            aria-label="Aviso de Privacidad"
+          >
+            <img
+              src="/img/nosotros-nuestra-filosofia-3.webp"
+              alt=""
+              class="leg-pill__bg"
+            />
+            <div class="leg-pill__overlay"></div>
+            <span class="leg-pill__label">Aviso de Privacidad</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    label="Empieza a disfrutar"
+    title="Únete y accede a todos los"
+    titleSerif="beneficios"
+    description="Miles de socios ya disfrutan del ecosistema UCM. Tu membresía te da acceso inmediato a todos los servicios, rendimientos y privilegios."
+    cta={{ label: "Ver planes de membresía", href: "/tienda" }}
+    ctaSecondary={{ label: "Hablar con un asesor", href: "#" }}
+    variant="surface"
+    align="center"
+  />
+</Layout>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>(".reveal-up, .reveal-left, .reveal-right")
+    .forEach((el) => {
+      const isLeft = el.classList.contains("reveal-left");
+      const isRight = el.classList.contains("reveal-right");
+      el.style.opacity = "0";
+      el.style.transform = isLeft
+        ? "translateX(-30px)"
+        : isRight
+          ? "translateX(30px)"
+          : "translateY(24px)";
+      el.style.transition = "opacity 0.7s ease, transform 0.7s ease";
+      const obs = new IntersectionObserver(
+        ([e]) => {
+          if (e.isIntersecting) {
+            const d = parseFloat(el.style.animationDelay || "0") * 1000;
+            setTimeout(() => {
+              el.style.opacity = "1";
+              el.style.transform = "translate(0)";
+            }, d);
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.1 },
+      );
+      obs.observe(el);
+    });
+</script>

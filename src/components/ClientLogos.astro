@@ -1,0 +1,24 @@
+---
+const logos = [
+  { name: 'On Deck', style: 'font-weight:700; font-size:1rem; letter-spacing:-0.02em;' },
+  { name: 'NIVEA', style: 'font-weight:700; font-size:1.1rem; letter-spacing:0.12em;' },
+  { name: 'miro', style: 'font-weight:700; font-size:1.25rem; letter-spacing:-0.03em;' },
+  { name: 'HYPER ISLAND', style: 'font-weight:700; font-size:0.85rem; letter-spacing:0.08em;' },
+  { name: 'GONG', style: 'font-weight:700; font-size:1.1rem; letter-spacing:0.05em;' },
+  { name: 'FARFETCH', style: 'font-weight:700; font-size:0.95rem; letter-spacing:0.08em;' },
+  { name: 'Shopify', style: 'font-weight:700; font-size:1rem; letter-spacing:-0.01em;' },
+  { name: 'Stripe', style: 'font-weight:700; font-size:1.1rem; letter-spacing:-0.02em;' },
+];
+---
+
+<div class="w-full overflow-hidden py-10" style="background:#ffffff; border-top:1px solid #f0ede8; border-bottom:1px solid #f0ede8;">
+  <div class="marquee-track flex items-center" style="animation: marquee 22s linear infinite; width: max-content;">
+    {[...logos, ...logos].map((logo) => (
+      <div class="flex items-center justify-center px-14" style="flex-shrink:0;">
+        <span style={`font-family:'Poppins',sans-serif; color:#c0bdb8; ${logo.style}`}>
+          {logo.name}
+        </span>
+      </div>
+    ))}
+  </div>
+</div>

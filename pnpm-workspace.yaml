@@ -1,5 +1,8 @@
 allowBuilds:
-  esbuild: set this to true or false
-  sharp: set this to true or false
+  '@parcel/watcher': true
+  esbuild: true
+  sharp: true
 minimumReleaseAgeExclude:
   - astro@6.4.3
+  - '@astrojs/netlify@7.0.12'
+  - '@astrojs/react@5.0.7'

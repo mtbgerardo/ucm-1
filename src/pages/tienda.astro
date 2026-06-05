@@ -1,0 +1,438 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/sections/PageHero.astro";
+import SectionLabel from "../components/ui/SectionLabel.astro";
+import BlockImageText from "@/components/sections/BlockImageText.astro";
+---
+
+<Layout
+  title="Tienda — UCM Unión de Crédito Mexicano"
+  description="Elige la membresía UCM que mejor se adapte a tus metas financieras. Planes para cada etapa de tu vida, con beneficios exclusivos desde el día uno."
+>
+  <PageHero
+    title="Invierte y recibe boletos hospitality para el"
+    titleSerif="Mundial de fútbol"
+    image="/img/hero-promocion.webp"
+  />
+
+  <!-- Planes -->
+  <section class="section-white py-24" id="planes">
+    <div class="container-ucm">
+      <div class="text-center mb-16 reveal-up">
+        <p class="font-[500]">
+          CON LOS BENEFICIOS DE UNION DE CRÉDITO MEXICANO,
+        </p>
+        <h2
+          style="font-size:clamp(1.75rem,3.5vw,2.5rem); color:#333333; text-align:center; line-height:1.2;"
+        >
+          Da un paso más hacia la
+          <span
+            class="serif-italic"
+            style="font-size:clamp(2rem,4vw,2.9rem); color:#333333;"
+          >
+            victoria</span
+          >
+        </h2>
+      </div>
+
+      <BlockImageText
+        imageSrc="/img/promocion-beneficios.webp"
+        imageAlt="Promoción Copa Mundial de la FIFA 2026™"
+        paragraphs={[
+          "Tu pase al Mundial 2026 comienza con el plan de inversión con pago de rendimientos al vencimiento.",
+          "Para los Socios que consolidan portafolios a partir de $1,000,000 MXN con un horizonte mínimo de 12 meses, el nivel de exclusividad se eleva:",
+        ]}
+        bulletPoints={[
+          "Acceso a una taza preferencial.",
+          "Un boleto Hospitality para el mundial.",
+        ]}
+      />
+    </div>
+  </section>
+
+  <!-- Tabla de tasas de inversión -->
+  <section class="promo-rates-section reveal-up">
+    <!-- Background image with glass table overlay -->
+    <div class="promo-rates-img-wrap h-screen">
+      <img
+        src="/img/promocion-cancha-numeros.png"
+        alt="Tasas de inversión Promoción Mundial UCM"
+        class="promo-rates-img-wrap__bg"
+      />
+      <div class="promo-rates-inner">
+        <div class="promo-rates-glass">
+          <table class="promo-rates-table">
+            <thead>
+              <tr>
+                <th>Plazo</th>
+                <th>Tasa con 1 boleto</th>
+                <th>Tasa sin boleto&nbsp;+&nbsp;0.50%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>12 meses</td><td>11.50%</td><td>12.00%</td></tr>
+              <tr><td>18 meses</td><td>11.75%</td><td>12.25%</td></tr>
+              <tr><td>24 meses</td><td>12.25%</td><td>12.75%</td></tr>
+              <tr><td>36 meses</td><td>13.00%</td><td>13.50%</td></tr>
+              <tr><td>48 meses</td><td>13.50%</td><td>14.00%</td></tr>
+              <tr><td>60 meses</td><td>14.00%</td><td>14.50%</td></tr>
+            </tbody>
+          </table>
+          <p class="promo-rates-caption">
+            Servicios exclusivos para socios UCM
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Gold banner -->
+    <div class="promo-rates-banner">
+      <h2 class="text-4xl tracking-tighter">
+        Invierte $1,000,000 (12+ meses) y recibe 1 boleto de entrada
+        <span class="promo-rates-banner__serif">Hospitality Fase de Grupo</span>
+      </h2>
+    </div>
+  </section>
+
+  <!-- Paso a paso hacia la meta -->
+  <section class="section-white py-24 overflow-hidden" id="paso-a-paso">
+    <div class="container-ucm max-w-4xl mx-auto">
+      <div class="text-center mb-16 motion-reveal" style="opacity: 0;">
+        <h2
+          style="font-size:clamp(1.75rem,3.5vw,2.5rem); color:#333333; text-align:center; line-height:1.2; font-weight: 700;"
+        >
+          Paso a paso hacia la
+          <span
+            class="serif-italic"
+            style="font-size:clamp(2rem,4vw,2.9rem); color:#333333;"
+          >
+            meta
+          </span>
+        </h2>
+      </div>
+
+      <div class="flex flex-col items-center text-center space-y-2">
+        <!-- Step 1 -->
+        <div
+          class="flex flex-col items-center motion-reveal"
+          style="opacity: 0;"
+        >
+          <p class="text-xl md:text-2xl font-medium text-[#333333] mb-4">
+            Hazte socio UCM
+          </p>
+          <a
+            href="#"
+            class="btn-primary"
+            style="padding: 0.825rem 2.5rem; text-transform: none; font-size: 1rem;"
+            >Quiero registrarme</a
+          >
+          <a
+            href="#"
+            class="mt-2 text-xs md:text-sm font-medium"
+            style="color: #333333;">¿Ya eres socio?</a
+          >
+        </div>
+
+        <!-- Dashed line -->
+        <div
+          class="h-10 md:h-12 w-[3px] motion-reveal"
+          style="background-image: repeating-linear-gradient(to bottom, #333 0, #333 6px, transparent 6px, transparent 12px); opacity: 0;"
+        >
+        </div>
+
+        <!-- Step 2 -->
+        <div
+          class="flex flex-col items-center motion-reveal"
+          style="opacity: 0;"
+        >
+          <p class="text-xl md:text-2xl font-medium text-[#333333] mb-4">
+            Invierte $1,000,000 de pesos mexicanos
+          </p>
+          <a
+            href="#"
+            class="btn-primary"
+            style="padding: 0.825rem 2.5rem; text-transform: none; font-size: 1rem;"
+            >Quiero invertir</a
+          >
+        </div>
+
+        <!-- Dashed line -->
+        <div
+          class="h-10 md:h-12 w-[3px] motion-reveal"
+          style="background-image: repeating-linear-gradient(to bottom, #333 0, #333 6px, transparent 6px, transparent 12px); opacity: 0;"
+        >
+        </div>
+
+        <!-- Step 3 -->
+        <div
+          class="flex flex-col items-center motion-reveal"
+          style="opacity: 0;"
+        >
+          <p class="text-xl md:text-2xl font-medium text-[#333333]">
+            Recibe tu boleto para el Mundial 2026
+          </p>
+        </div>
+
+        <!-- Dashed line -->
+        <div
+          class="h-10 md:h-12 w-[3px] motion-reveal"
+          style="background-image: repeating-linear-gradient(to bottom, #333 0, #333 6px, transparent 6px, transparent 12px); opacity: 0;"
+        >
+        </div>
+
+        <!-- Step 4 -->
+        <div
+          class="flex flex-col items-center motion-reveal"
+          style="opacity: 0;"
+        >
+          <p class="text-xl md:text-2xl font-medium text-[#333333]">
+            Ve como ganas intereses mientras esperas el Mundial
+          </p>
+        </div>
+
+        <!-- Dashed line -->
+        <div
+          class="h-10 md:h-12 w-[3px] motion-reveal"
+          style="background-image: repeating-linear-gradient(to bottom, #333 0, #333 6px, transparent 6px, transparent 12px); opacity: 0;"
+        >
+        </div>
+
+        <!-- Step 5 -->
+        <div
+          class="flex flex-col items-center motion-reveal w-full"
+          style="opacity: 0;"
+        >
+          <div class="inline-flex flex-col items-end text-right">
+            <p class="text-xl md:text-2xl font-medium text-[#333333] mb-1">
+              Disfruta el partido de la mano de UCM
+            </p>
+            <p class="text-xs md:text-sm font-bold" style="color: #333333;">
+              Rendimiento de hasta 15.5% anual
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beneficios Hospitality -->
+  <section class="section-white py-24" id="beneficios-hospitality">
+    <div class="container-ucm max-w-4xl mx-auto">
+      <div class="text-center mb-16 motion-reveal" style="opacity: 0;">
+        <h2
+          style="font-size:clamp(1.75rem,3.5vw,2.5rem); color:#0A0B1E; text-align:center; line-height:1.2; font-weight: 700;"
+        >
+          Beneficios <span
+            class="serif-italic"
+            style="font-size:clamp(2rem,4vw,2.9rem); color:#0A0B1E;"
+            >Hospitality</span
+          >
+        </h2>
+        <p
+          class="mt-4 text-[#333333] font-medium max-w-2xl mx-auto text-sm md:text-base"
+        >
+          Contacta a tu promotor y pregunta por los servicios exclusivos
+          adicionales para socios UCM.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <!-- Card 1 -->
+        <div
+          class="relative overflow-hidden rounded-[2rem] aspect-[4/5] motion-reveal"
+          style="opacity: 0;"
+        >
+          <img
+            src="/img/promocion-beneficios-hospitality-1.webp"
+            alt="Acceso Dedicado"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+          >
+          </div>
+          <div
+            class="absolute bottom-0 left-0 w-full p-8 text-center text-white"
+          >
+            <h3
+              class="text-xl md:text-2xl font-bold uppercase tracking-wide mb-2"
+            >
+              Acceso Dedicado
+            </h3>
+            <p class="text-sm md:text-base font-light">
+              Entrada preferencial al estadio
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="relative overflow-hidden rounded-[2rem] aspect-[4/5] motion-reveal"
+          style="opacity: 0;"
+        >
+          <img
+            src="/img/promocion-beneficios-hospitality-2.webp"
+            alt="Asientos Preferenciales"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+          >
+          </div>
+          <div
+            class="absolute bottom-0 left-0 w-full p-8 text-center text-white"
+          >
+            <h3
+              class="text-xl md:text-2xl font-bold uppercase tracking-wide mb-2 leading-tight"
+            >
+              Asientos<br />Preferenciales
+            </h3>
+            <p class="text-sm md:text-base font-light mt-2">
+              Excelentes vistas y acceso conveniente
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="relative overflow-hidden rounded-[2rem] aspect-[4/5] motion-reveal"
+          style="opacity: 0;"
+        >
+          <img
+            src="/img/promocion-beneficios-hospitality-3.webp"
+            alt="Servicio de Hospitalidad"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+          >
+          </div>
+          <div
+            class="absolute bottom-0 left-0 w-full p-8 text-center text-white"
+          >
+            <h3
+              class="text-xl md:text-2xl font-bold uppercase tracking-wide mb-2 leading-tight"
+            >
+              Servicio de<br />Hospitalidad
+            </h3>
+            <p class="text-sm md:text-base font-light mt-2">
+              Pre-partido y post-partido
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div
+          class="relative overflow-hidden rounded-[2rem] aspect-[4/5] motion-reveal"
+          style="opacity: 0;"
+        >
+          <img
+            src="/img/promocion-beneficios-hospitality-4.webp"
+            alt="Y Muchos Más"
+            class="absolute inset-0 w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+          >
+          </div>
+          <div
+            class="absolute bottom-0 left-0 w-full p-8 text-center text-white"
+          >
+            <h3
+              class="text-xl md:text-2xl font-bold uppercase tracking-wide mb-2"
+            >
+              Y muchos más
+            </h3>
+            <p class="text-sm md:text-base font-light">
+              Beneficios exclusivos por confirmar
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto my-20">
+      <div class="text-center mb-4 motion-reveal" style="opacity: 0;">
+        <h2
+          style="font-size:clamp(1.75rem,3.5vw,2.5rem); color:#0A0B1E; text-align:center; line-height:1.2; font-weight: 700;"
+        >
+          Unión de <span
+            class="serif-italic"
+            style="font-size:clamp(2rem,4vw,2.9rem); color:#0A0B1E;"
+            >Mexicanos</span
+          >
+        </h2>
+      </div>
+      <div class="w-full">
+        <p>
+          Tasa de rendimiento anual fija aplicable a inversiones a plazo de 360
+          días para montos desde $1,000,000.00 MXN (Un millón de pesos 00/100
+          M.N.). GAT Nominal¹: 13.99% GAT Real²: 9.87%. Información con fines
+          informativos y comparativos. Fecha de cálculo: 30 de abril de 2026.
+          Promoción válida hasta el partido inaugural del Mundial de Futbol
+          2026. Aplican restricciones. Tasas y condiciones sujetas a cambio sin
+          previo aviso. Boletos sujetos a disponibilidad. Promoción no
+          patrocinada, avalada ni administrada por FIFA. Para más información
+          sobre términos, condiciones y características del producto,
+          comuníquese al correo: contacto@creditomexicano.com.mx Producto de
+          inversión exclusivo para Socios de la Unión de Crédito Mexicano,
+          institución supervisada por la Comisión Nacional Bancaria y de Valores
+          (CNBV) y la CONDUSEF. ¹ GAT Nominal: Ganancia Anual Total antes de
+          impuestos. ² GAT Real: Rendimiento estimado después de descontar la
+          inflación.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .faq-item[open] summary svg {
+      transform: rotate(180deg);
+    }
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+  </style>
+
+  <script>
+    import { inView, animate } from "motion";
+
+    document.querySelectorAll<HTMLElement>(".motion-reveal").forEach((el) => {
+      inView(el, () => {
+        animate(
+          el,
+          { opacity: [0, 1], y: [30, 0] },
+          { duration: 0.8, ease: "easeOut" },
+        );
+      });
+    });
+
+    document
+      .querySelectorAll<HTMLElement>(".reveal-up, .reveal-left, .reveal-right")
+      .forEach((el) => {
+        const isLeft = el.classList.contains("reveal-left");
+        const isRight = el.classList.contains("reveal-right");
+        el.style.opacity = "0";
+        el.style.transform = isLeft
+          ? "translateX(-30px)"
+          : isRight
+            ? "translateX(30px)"
+            : "translateY(24px)";
+        el.style.transition = "opacity 0.7s ease, transform 0.7s ease";
+        const obs = new IntersectionObserver(
+          ([e]) => {
+            if (e.isIntersecting) {
+              const d = parseFloat(el.style.animationDelay || "0") * 1000;
+              setTimeout(() => {
+                el.style.opacity = "1";
+                el.style.transform = "translate(0)";
+              }, d);
+              obs.disconnect();
+            }
+          },
+          { threshold: 0.1 },
+        );
+        obs.observe(el);
+      });
+  </script>
+</Layout>

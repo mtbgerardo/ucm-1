@@ -1,0 +1,173 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PageHero from "../components/sections/PageHero.astro";
+import CTABanner from "../components/sections/CTABanner.astro";
+import SectionLabel from "../components/ui/SectionLabel.astro";
+import ModalInversiones from "../components/modals/ModalInversiones.astro";
+import ModalCreditoEmpresarial from "../components/modals/ModalCreditoEmpresarial.astro";
+import ModalArrendamiento from "../components/modals/ModalArrendamiento.astro";
+import ModalAsesoriaPersonal from "../components/modals/ModalAsesoriaPersonal.astro";
+---
+
+<Layout
+  title="Ayuda — UCM Unión de Crédito Mexicano"
+  description="Soluciones de financiamiento flexibles para impulsar tus proyectos personales y empresariales. Tasas preferenciales y proceso ágil."
+>
+  <PageHero
+    title="Te ayudamos a encontrar la mejor"
+    titleSerif="opción"
+    image="/img/hero-opciones.webp"
+  />
+
+  <section class="section-white my-20">
+    <div class="container-ucm text-center">
+      <h2
+        class="font-medium text-[clamp(1.8rem,3.5vw,2.90rem)] text-[#0A0B1E] tracking-tighter leading-none mb-8"
+      >
+        Estamos aquí para{" "}<br />
+        <span class="serif-italic text-[clamp(2.1rem,4vw,3.5rem)]">
+          ayudarte
+        </span>{" "}
+        a dar el siguiente paso
+      </h2>
+      <p class="max-w-[740px] mx-auto px-5">
+        Cuéntanos qué estás buscando y uno de nuestros asesores te acompañará
+        para encontrar la mejor opción para ti o tu empresa.
+      </p>
+    </div>
+  </section>
+
+  <!-- Opciones de solución -->
+  <section class="section-white pb-8">
+    <div class="container-ucm">
+      <p class="text-center tracking-tight font-[500] text-sm uppercase mb-10">
+        ¿Qué solución te interesa?
+      </p>
+
+      <div class="opc-grid reveal-up">
+        <!-- Inversiones -->
+        <button
+          class="opc-card"
+          type="button"
+          data-open-modal="modal-inversiones"
+          aria-label="Abrir formulario de Inversiones"
+        >
+          <div class="opc-card__img-wrap">
+            <img
+              src="/img/opciones-inversiones.webp"
+              alt="Inversiones UCM"
+              class="opc-card__img"
+            />
+          </div>
+          <p class="opc-card__title">Inversiones</p>
+          <p class="opc-card__desc">
+            Haz crecer tu patrimonio con respaldo y confianza.
+          </p>
+        </button>
+
+        <!-- Crédito Empresarial -->
+        <button
+          class="opc-card"
+          type="button"
+          data-open-modal="modal-credito-empresarial"
+          aria-label="Abrir formulario de Crédito Empresarial"
+        >
+          <div class="opc-card__img-wrap">
+            <img
+              src="/img/opciones-credito-empresarial.webp"
+              alt="Crédito Empresarial UCM"
+              class="opc-card__img"
+            />
+          </div>
+          <p class="opc-card__title">Crédito Empresarial</p>
+          <p class="opc-card__desc">
+            Impulsa tu negocio con financiamiento claro y accesible.
+          </p>
+        </button>
+
+        <!-- Arrendamiento Puro -->
+        <button
+          class="opc-card"
+          type="button"
+          data-open-modal="modal-arrendamiento"
+          aria-label="Abrir formulario de Arrendamiento Puro"
+        >
+          <div class="opc-card__img-wrap">
+            <img
+              src="/img/opciones-arrendamiento.webp"
+              alt="Arrendamiento Puro UCM"
+              class="opc-card__img"
+            />
+          </div>
+          <p class="opc-card__title">Arrendamiento Puro</p>
+          <p class="opc-card__desc">Equipa tu empresa sin descapitalizarte.</p>
+        </button>
+
+        <!-- Asesoría Personalizada -->
+        <button
+          class="opc-card"
+          type="button"
+          data-open-modal="modal-asesoria-personal"
+          aria-label="Abrir formulario de Asesoría Personalizada"
+        >
+          <div class="opc-card__img-wrap">
+            <img
+              src="/img/opciones-asesoria-personal.webp"
+              alt="Asesoría Personalizada UCM"
+              class="opc-card__img"
+            />
+          </div>
+          <p class="opc-card__title">Asesoría Personalizada</p>
+          <p class="opc-card__desc">Te ayudamos a encontrar la mejor opción.</p>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <CTABanner
+    label="¿Todo listo?"
+    title="Solicita tu crédito"
+    titleSerif="ahora"
+    description="Sin costos de apertura, sin penalizaciones por pago anticipado. Solo condiciones justas y el respaldo de 31 años de experiencia."
+    cta={{ label: "Solicitar crédito", href: "#" }}
+    ctaSecondary={{ label: "Agendar asesoría gratis", href: "#" }}
+    variant="surface"
+    align="center"
+  />
+
+  <!-- Modals -->
+  <ModalInversiones />
+  <ModalCreditoEmpresarial />
+  <ModalArrendamiento />
+  <ModalAsesoriaPersonal />
+</Layout>
+
+<script>
+  document
+    .querySelectorAll<HTMLElement>(".reveal-up, .reveal-left, .reveal-right")
+    .forEach((el) => {
+      const isLeft = el.classList.contains("reveal-left");
+      const isRight = el.classList.contains("reveal-right");
+      el.style.opacity = "0";
+      el.style.transform = isLeft
+        ? "translateX(-30px)"
+        : isRight
+          ? "translateX(30px)"
+          : "translateY(24px)";
+      el.style.transition = "opacity 0.7s ease, transform 0.7s ease";
+      const obs = new IntersectionObserver(
+        ([e]) => {
+          if (e.isIntersecting) {
+            const d = parseFloat(el.style.animationDelay || "0") * 1000;
+            setTimeout(() => {
+              el.style.opacity = "1";
+              el.style.transform = "translate(0)";
+            }, d);
+            obs.disconnect();
+          }
+        },
+        { threshold: 0.1 },
+      );
+      obs.observe(el);
+    });
+</script>
